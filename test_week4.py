@@ -4,6 +4,7 @@ from week4 import format_address
 
 class TestModule4GradedAssignment(unittest.TestCase):
     """ Week4 test class """
+
     def test_format_address(self):
         """ Verify format_address """
         self.assertEqual(format_address("123 Main Street"),
