@@ -31,11 +31,15 @@ def highlight_word(sentence, word):
     """
     The highlight_word function changes the given word in a sentence to its upper-case version. For example, highlight_word("Have a nice day", "nice") returns "Have a NICE day". Can you write this function in just one line?
     """
-    new_list = []
-    for w in sentence.split():
-        if word in w:
-            new_list.append(w.upper())
-        else:
-            new_list.append(w)
-    new_sentence = " ".join(new_list)
-    return new_sentence
+    return sentence.replace(word, word.upper())
+
+def combine_lists(list1, list2):
+    """
+    Generate a new list containing the elements of list2
+    Followed by the elements of list1 in reverse order
+    """
+    new_list = list2
+    # add list1 in reverse order
+    for index in range(len(list1)-1,-1,-1):
+        new_list.append(list1[index])
+    return new_list

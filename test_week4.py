@@ -1,6 +1,6 @@
 """ week4 test class and methods """
 import unittest
-from week4 import format_address, highlight_word
+from week4 import format_address, highlight_word, combine_lists
 
 
 class TestWeek4(unittest.TestCase):
@@ -21,7 +21,21 @@ class TestWeek4(unittest.TestCase):
         """ Use all CAPS to highlight a word in a sentence """
         self.assertEqual(highlight_word("Have a nice day", "nice"),
                          "Have a NICE day")
+        
         self.assertEqual(highlight_word("Shhh, don't be so loud!", "loud"),
                          "Shhh, don't be so LOUD!")
+        
         self.assertEqual(highlight_word("Automating with Python is fun", "fun"),
                          "Automating with Python is FUN")
+        
+        self.assertEqual(highlight_word("Automating with Python is fun", "Automating"),
+                         "AUTOMATING with Python is fun")
+        
+    def test_combine_lists(self):
+        
+        Jamies_list = ["Alice", "Cindy", "Bobby", "Jan", "Peter"]
+        Drews_list = ["Mike", "Carol", "Greg", "Marcia"]
+
+        self.assertEqual(combine_lists(Jamies_list, Drews_list),
+                         ['Mike', 'Carol', 'Greg', 'Marcia', 'Peter', 'Jan', 'Bobby', 'Cindy', 'Alice']
+        )
