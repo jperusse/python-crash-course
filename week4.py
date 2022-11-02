@@ -43,3 +43,25 @@ def combine_lists(list1, list2):
     for index in range(len(list1)-1,-1,-1):
         new_list.append(list1[index])
     return new_list
+
+def squares(start, end):
+    """"
+    Return a list of consecutive squares for the given range start to end.
+    """
+    return [n*n for n in range(start, end+1)]
+
+def car_listing(car_prices):
+    """
+    Complete the code to iterate through the keys and values of the car_prices dictionary, printing out some information about each one.
+    """
+    result = ""
+    for key, value in car_prices.items():
+        result += f"{key} costs {value} dollars\n"
+    return result
+
+def combine_guests(guests1:dict, guests2:dict):
+    """
+    Combine two dictionaries withe first given preference
+    """
+    guests2.update(guests1)
+    return guests2
