@@ -65,3 +65,17 @@ def combine_guests(guests1:dict, guests2:dict):
     """
     guests2.update(guests1)
     return guests2
+
+def count_letters(text:str):
+    """ Use a dictionary to count the letters in a string """
+    result = {}
+    # Go through each letter in the text
+    for letter in text.lower():
+    # Check if the letter needs to be counted or not
+        if letter.isalpha():
+            # Add or increment the value in the dictionary
+            if letter in result:
+                result[letter] += 1
+            else:
+                result[letter] = 1
+    return result

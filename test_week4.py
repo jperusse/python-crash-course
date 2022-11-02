@@ -7,6 +7,7 @@ from week4 import combine_lists
 from week4 import squares
 from week4 import car_listing
 from week4 import combine_guests
+from week4 import count_letters
 
 
 class TestWeek4(unittest.TestCase):
@@ -70,3 +71,17 @@ class TestWeek4(unittest.TestCase):
         corrected_dict = { "David":1, "Nancy":1, "Robert":4, "Adam":2, "Samantha":3, "Chris":5, "Brenda":3, "Jose":3, "Charlotte":2, "Terry":1}
         guest_dict = combine_guests(rorys_guests, taylors_guests)
         self.assertDictEqual(guest_dict, corrected_dict)
+
+    def test_count_letters(self):
+        """ Verify count_letters """
+        self.assertEqual(count_letters("AaBbCc"),
+                         {'a': 2, 'b': 2, 'c': 2}
+        )
+
+        self.assertEqual(count_letters("Math is fun! 2+2=4"),
+                         {'m': 1, 'a': 1, 't': 1, 'h': 1, 'i': 1, 's': 1, 'f': 1, 'u': 1, 'n': 1}
+        )
+
+        self.assertEqual(count_letters("This is a sentence."),
+                         {'t': 2, 'h': 1, 'i': 2, 's': 3, 'a': 1, 'e': 3, 'n': 2, 'c': 1}
+        )
