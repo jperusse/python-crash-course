@@ -1,9 +1,10 @@
 """ week5 test class and methods """
 import unittest
-from week5 import Person, City
+from week5 import Person, City, Furniture
 from week5 import exchange_apples
 from week5 import exchange_ideas
 from week5 import max_elevation_city
+from week5 import describe_furniture
 
 class TestWeek5(unittest.TestCase):
     """ Unit tests for Week5 """
@@ -62,3 +63,20 @@ class TestWeek5(unittest.TestCase):
         self.assertEqual(max_elevation_city(city1,city2,city3,100000), '"Cusco, Peru"')
         self.assertEqual(max_elevation_city(city1,city2,city3,1000000), '"Sofia, Bulgaria"')
         self.assertEqual(max_elevation_city(city1,city2,city3,10000000), '""')
+
+    def test_describe_furniture(self):
+        """ verify describe_furniture """
+        table = Furniture()
+        table.color = "brown"
+        table.material = "wood"
+        
+        couch = Furniture()
+        couch.color = "red"
+        couch.material = "leather"
+
+        self.assertEqual(describe_furniture(table),
+                         "This piece of furniture is made of brown wood"
+        )
+        self.assertEqual(describe_furniture(couch),
+                         "This piece of furniture is made of red leather"
+        )

@@ -13,6 +13,11 @@ class City:
     elevation = 0 # in meters
     population = 0
 
+class Furniture:
+    """ Piece of furniture """
+    color = ""
+    material = ""
+
 def exchange_apples(you:Person, me:Person):
     """
     #Here, despite G.B. Shaw's quote, our characters have started with
@@ -72,3 +77,7 @@ def max_elevation_city(city1:City, city2:City, city3:City, min_population):
         return f'"{return_city.name}, {return_city.country}"'
     else:
         return '""'
+
+def describe_furniture(piece:Furniture):
+    """ Print all attributes """
+    return f"This piece of furniture is made of {piece.color} {piece.material}"
