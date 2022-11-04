@@ -69,7 +69,7 @@ class TestWeek5(unittest.TestCase):
         table = Furniture()
         table.color = "brown"
         table.material = "wood"
-        
+
         couch = Furniture()
         couch.color = "red"
         couch.material = "leather"

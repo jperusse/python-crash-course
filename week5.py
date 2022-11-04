@@ -18,7 +18,7 @@ class Furniture:
     color = ""
     material = ""
 
-def exchange_apples(you:Person, me:Person):
+def exchange_apples(you:Person, me_too:Person):
     """
     #Here, despite G.B. Shaw's quote, our characters have started with
     #different amounts of apples so we can better observe the results.
@@ -30,11 +30,11 @@ def exchange_apples(you:Person, me:Person):
     #You may need more than one line of code to do that, which is OK.
     """
     apples = you.apples
-    you.apples = me.apples
-    me.apples = apples
-    return you.apples, me.apples
+    you.apples = me_too.apples
+    me_too.apples = apples
+    return you.apples, me_too.apples
 
-def exchange_ideas(you:Person, me:Person):
+def exchange_ideas(you:Person, me_too:Person):
     """
     #"you" and "me" will share our ideas with one another.
     #What operations need to be performed, so that each object receives
@@ -44,9 +44,9 @@ def exchange_ideas(you:Person, me:Person):
     #the sum of ideas, or can you find another way?
     #Use as many lines of code as you need here.
     """
-    you.ideas += me.ideas
-    me.ideas = you.ideas
-    return you.ideas, me.ideas
+    you.ideas += me_too.ideas
+    me_too.ideas = you.ideas
+    return you.ideas, me_too.ideas
 
 def max_elevation_city(city1:City, city2:City, city3:City, min_population):
     """ return highest city """
